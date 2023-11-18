@@ -86,7 +86,7 @@
                 <input name="DOB" type="date"><br><br>
 
                 <button type="button" onclick="SignUp()" id="submitbtn">Submit</button>
-                <button id="cancelbtn" type="reset" onclick="formcancel()">Cancel</button>
+                <button id="cancelbtn" type="reset" onclick="formcancel()">Clear</button>
             </form><br>
             Already have an account?
             <a href="index.html">Sign in</a>
@@ -106,7 +106,7 @@
             var sex = form.elements['sex'].value;
             var dob = form.elements['DOB'].value;
 
-            if (fname == '' || lname == '' || username == '' || password == '' || confirmpass == '' || sex == '') {
+            if (fname == '' || lname == '' || username == '' || password == '' || confirmpass == '' || sex == '' ||) {
                 alert('Please fill in all fields');
             }
             else if (password != confirmpass) {
@@ -119,10 +119,14 @@
         }
 
         function formCancel() {
-            var usr = document.getElementById("username");
-            var pass = document.getElementById("password");
-            usr.value = '';
-            pass.value = '';
+            var form = document.querySelector("form[name='form-signup']");
+            form.elements['fname'].value = "";
+            form.elements['lname'].value= "";
+            form.elements['username'].value= "";
+            form.elements['password'].value= "";
+            form.elements['confirmpass'].value = "";
+            sex = form.elements['sex'].value = "";
+            dob = form.elements['DOB'].value= "";
         }
 
     </script>
