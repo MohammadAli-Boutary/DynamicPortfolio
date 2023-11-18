@@ -106,7 +106,7 @@
             var sex = form.elements['sex'].value;
             var dob = form.elements['DOB'].value;
 
-            if (fname == '' || lname == '' || username == '' || password == '' || confirmpass == '' || sex == '' ||) {
+            if (fname == '' || lname == '' || username == '' || password == '' || confirmpass == '' || sex == ''){
                 alert('Please fill in all fields');
             }
             else if (password != confirmpass) {
@@ -115,7 +115,6 @@
             else{
                 form.submit();
             }
-            console.log(captcha);
         }
 
         function formCancel() {
@@ -125,8 +124,8 @@
             form.elements['username'].value= "";
             form.elements['password'].value= "";
             form.elements['confirmpass'].value = "";
-            sex = form.elements['sex'].value = "";
-            dob = form.elements['DOB'].value= "";
+            form.elements['sex'].value = "";
+            form.elements['DOB'].value= "";
         }
 
     </script>
