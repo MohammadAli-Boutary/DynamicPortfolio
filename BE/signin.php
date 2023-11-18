@@ -1,31 +1,40 @@
 <?php 
 
-echo "hey guys";
 $error_code;
 $success= false;
 
 if(isset($_POST['username']) && isset($_POST['password'])){
-    echo $_POST['username'];
-    $usernames = array('john.wick','john.cena','john.kurose');
-    $passwords = array('test1','test2','test3');
+    $username =  $_POST['username'];
+    $password = $_POST['password'];
     
-    for ($i = 0 ; $i < 3 ; $i++){
-        if($usernames[$i] == $_POST['username'] && $passwords[$i] == $_POST['password']){
-            $success = true;
-            break;
+    $filepath = '../user_data.json';
+    $json_data = file_get_contents($filepath);
+    $userData = json_decode($json_data,true);
+    foreach($userData as $key => $value){
+        if (is_array($value) && isset($value['username'])) { 
+            $potential_username = $value['username'];
+            $potential_password = $value['password'];
+            if($potential_username === $username && $potential_password === $password){
+                $success = true;
+            }
         }
+
     }
+
 }
 else{
-    echo "window.href.location = 'index.php?error_code = 1' ";
+    echo "<script>window.href.location = 'index.php?error_code = 1'</script> ";
 }
-echo $success;
+
+
+
 if($success){
-    echo "<script> window.href.location = 'tests.html'";
+    echo "User Exists";
 }
 else{
-    echo "<script> window.href.location = 'index.php?error_code=0'";
+    header('Location: ../signinpage.php?error_code=1');
 }
+
 
 ?>
 

@@ -2,7 +2,7 @@
     position: fixed;
     width: 100%;
     height: 40px;
-    background-color: indigo;
+    background-color: #1F6BA7;
     top: 0;
 }
 
@@ -13,7 +13,7 @@ span {
 }
 
 .menu-items {
-    background-color: indigo;
+    background-color: #1F6BA7;
     color: white;
     cursor: pointer;
     min-width: 160px;
