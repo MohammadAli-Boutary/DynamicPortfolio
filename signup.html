@@ -55,37 +55,37 @@
 
     <div class="page-content">
         <div class="title">
-            <h1 style="color:#EFEFEF; font-weight: bold;" >Sign Up</h1>
+            <h1 style="color:#EFEFEF; font-weight: bold;">Sign Up</h1>
         </div>
         <div class="form">
-            <form name="form-signup" method="POST" action="">
+            <form name="form-signup" method="POST" action="signup.php">
                 <!-- we use labels for phones = click on label, input is also clicked, ex checkbox -->
 
                 <label for="username">Username: </label> <br>
-                <input class="tf" name="username" type="text" id="username">
-                <br>
+                <input class="tf" name="username" type="text" id="username"><br>
+                
                 <label for="fname">First Name: </label> <br>
-                <input class="tf" name="fname" type="text" id="fname">
-                <br>
+                <input class="tf" name="fname" type="text" id="fname"><br>
 
                 <label for="fname">Last Name: </label> <br>
-                <input class="tf" name="lname" type="text" id="lname">
-                <br>
+                <input class="tf" name="lname" type="text" id="lname"><br>
+                
 
                 <label for="username">Password: </label> <br>
-                <input class="tf" name="password" type="text" id="password">
-                <br>
+                <input class="tf" name="password" type="text" id="password"><br>
+                
 
                 <label for="confirm-password">Confirm Password: </label> <br>
-                <input class="tf" name="confirmpass" type="text" id="confirm-password">
-                <br>
+                <input class="tf" name="confirmpass" type="text" id="confirm-password"><br>
+                
+
                 <input type="radio" id="rad-m" name="sex" value="m"> <label for="rad-m">Male</label>
                 <input type="radio" id="rad-f" name="sex" value="f"> <label for="rad-f">Female</label> <br>
-                <div class="input-group">
-                    <label for="DOB">Date of Birth:</label><br>
-                    <input name="DOB" type="date">
-                </div><br><br>
-                <button onclick="formSignup()" type="submit" id="sumitbtn">Submit</button>
+
+                <label for="DOB">Date of Birth:</label><br>
+                <input name="DOB" type="date"><br><br>
+
+                <button type="button" onclick="SignUp()" id="submitbtn">Submit</button>
                 <button id="cancelbtn" type="reset" onclick="formcancel()">Cancel</button>
             </form><br>
             Already have an account?
@@ -95,25 +95,25 @@
 
     <script>
 
-        function formSignup() {
+        function SignUp() {
+            console.log("In");
             var form = document.querySelector("form[name='form-signup']");
             var fname = form.elements['fname'].value;
             var lname = form.elements['lname'].value;
-            var email = form.elements['email'].value;
+            var username = form.elements['username'].value;
             var password = form.elements['password'].value;
             var confirmpass = form.elements['confirmpass'].value;
             var sex = form.elements['sex'].value;
-            var language = form.elements['language'].value;
-            var captcha = form.elements['captcha'];
-            var isChecked = captcha.checked;
-            if (fname == '' || lname == '' || email == '' || password == '' || confirmpass == '' || sex == '' || language == '') {
+            var dob = form.elements['DOB'].value;
+
+            if (fname == '' || lname == '' || username == '' || password == '' || confirmpass == '' || sex == '') {
                 alert('Please fill in all fields');
             }
             else if (password != confirmpass) {
                 alert('Passwords do not match');
             }
-            else if (!isChecked) {
-                alert('Please complete the captcha');
+            else{
+                form.submit();
             }
             console.log(captcha);
         }
