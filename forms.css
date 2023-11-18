@@ -1,18 +1,20 @@
-.signup-form{
+.signup-form {
     padding: 20px;
 }
 
-.txt-field{
-    border-radius:3px;
+.tf {
+    border-radius: 3px;
     padding: 5px;
-    height: 25px;
-    border: 2px solid #116181;
+    height: 30px;
     font-size: 15px;
     margin: 1px 0px 8px 0px;
-    width: 300px;
+    padding: 0px 5px 0px 5px;
+    font-size: large;
+    width: 80%;
+    border: 1px solid #808080;;
 }
 
-select{
+select {
     border-radius: 5px;
     font-size: 16px;
     padding: 5px;
@@ -20,7 +22,7 @@ select{
     height: 25px;
 }
 
-.signup-form button{
+.signup-form button {
     border-radius: 5px;
     padding: 8px;
     background-color: #116181;
@@ -29,13 +31,29 @@ select{
     cursor: pointer;
 }
 
-.form-container{
+.form-container {
     margin: 15px 0 15px 0;
 }
 
-label{
+label {
     font-size: 16px;
     color: #116181;
     display: inline-block;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+}
+
+.form button {
+    background-color: #1F6BA7;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 30%;
+    cursor: pointer;
+    font-weight: bold;
+    color:white;
+}
+
+input[type="date"] {
+    border-radius: 5px;
+    padding: 5px;
 }
