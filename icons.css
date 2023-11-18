@@ -1,0 +1,9 @@
+.icon{
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    background: url(burgericon.png);
+    background-size: contain;
+    vertical-align: middle;
+    margin: 3px;
+}
