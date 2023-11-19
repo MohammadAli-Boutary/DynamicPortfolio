@@ -89,9 +89,9 @@ if (isset($_GET['error_code'])) {
             line-height: 30px;
             margin-top: 30px;
             color: #1C2E36;
+            margin-bottom: 100px;
         }
         .view-gallery{
-            margin-top: 100px;
             padding: 10px;
             width: 40%;
             border-radius: 5px;
@@ -101,6 +101,9 @@ if (isset($_GET['error_code'])) {
             font-weight: bold;
             border: 1px solid #1C2E36;
             cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
 
         .view-gallery:hover{
@@ -112,8 +115,11 @@ if (isset($_GET['error_code'])) {
             color:#59E4A8 ;
         }
         #header a{
-            color: #59E4A8;
+            color:#1C2E36;
+            padding: 8px;
+            border-radius: 5px;
             text-decoration: none;
+            background-color: #59E4A8;
         }
     </style>
 </head>
@@ -137,7 +143,7 @@ if (isset($_GET['error_code'])) {
             <div class="welcome-message">
                 <h1>WELCOME</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus ex doloribus perferendis. Adipisci totam placeat, et autem atque recusandae ab sed voluptatem qui dolorum officiis eius voluptate quaerat omnis.</p>
-                <button class="view-gallery" >View Gallery</button>
+                <a  href="Gallery.php" type="button" class="view-gallery" >View Gallery</a>
             </div>
     </div>
 
