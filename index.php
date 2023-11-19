@@ -74,7 +74,11 @@ if (isset($_GET['error_code'])) {
         }
 
         #header {
-            background-color: #59E4A8;
+            background-color: #1C2E36;
+            text-align: right;
+            z-index: 2;
+            padding-top: 5px;
+            padding-bottom: 5px;
         }
         .welcome-message{
             width: 35%;
@@ -102,13 +106,28 @@ if (isset($_GET['error_code'])) {
         .view-gallery:hover{
             background-color: #D5F8E5;
         }
+
+        #header span{
+            margin-right: 20px;
+            color:#59E4A8 ;
+        }
+        #header a{
+            color: #59E4A8;
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body>
 
-    <header style=" z-index: 2;" id="header">
-
+    <header id="header">
+        
+        <span>
+            <?php echo "Welcome " . $username; ?>
+        </span>
+        <span>
+            <a href="logout.php">Logout</a>
+        </span>
 
     </header>
 
