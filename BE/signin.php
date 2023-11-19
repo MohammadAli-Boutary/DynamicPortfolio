@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 $error_code;
 $success= false;
@@ -16,6 +17,8 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             $potential_password = $value['password'];
             if($potential_username === $username && $potential_password === $password){
                 $success = true;
+                $matchedkey = $key;
+                break;
             }
         }
 
@@ -29,7 +32,9 @@ else{
 
 
 if($success){
-    echo "User Exists";
+    $_SESSION['key'] = $matchedkey; 
+    $url = "../index.php?key=" . urlencode($matchedkey);
+    header("Location: $url");
 }
 else{
     header('Location: ../signinpage.php?error_code=1');
